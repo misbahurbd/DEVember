@@ -1,36 +1,10 @@
 import { StatusBar } from "expo-status-bar"
 import { FlatList, StyleSheet, View } from "react-native"
-import DayListItem from "../components/core/day-list-item"
-import * as SplashScreen from "expo-splash-screen"
-import { useFonts } from "expo-font"
-import { useEffect } from "react"
+import DayListItem from "@components/core/day-list-item"
 
-const days = [...Array(28)].map((item, index) => index + 1)
+const days = [...Array(27)].map((item, index) => index + 1)
 
-export default function App() {
-  SplashScreen.preventAutoHideAsync()
-
-  const [loaded, error] = useFonts({
-    JosefinSans: require("../assets/fonts/JosefinSans-Regular.ttf"),
-    JosefinSansSemiBold: require("../assets/fonts/JosefinSans-SemiBold.ttf"),
-    JosefinSansBold: require("../assets/fonts/JosefinSans-Bold.ttf"),
-  })
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (loaded) {
-        SplashScreen.hideAsync()
-      }
-    }, 200)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [loaded])
-
-  if (!loaded && !error) {
-    return null
-  }
-
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -39,7 +13,7 @@ export default function App() {
         numColumns={2}
         contentContainerStyle={styles.listContainer}
         data={days}
-        renderItem={({ item }) => <DayListItem item={item} />}
+        renderItem={({ item }) => <DayListItem day={item} />}
       />
 
       <StatusBar style="auto" />

@@ -1,19 +1,19 @@
 import { Stack, router } from "expo-router"
 import { Button, StyleSheet, Text, View } from "react-native"
-const Day2Screen = () => {
+const Day3Screen = () => {
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ headerTitle: "Day 2: Onboarding" }} />
-      <Text style={styles.text}>Day 2 Screen</Text>
+      <Stack.Screen options={{ headerTitle: "Day 3: Markdown" }} />
+      <Text style={styles.text}>Day 3 : Markdown</Text>
 
       <Button
-        title="Go to onboarding"
-        onPress={() => router.push("/day-2/onboarding")}
+        title="Go to editor"
+        onPress={() => router.push("/day-3/editor")}
       />
     </View>
   )
 }
-export default Day2Screen
+export default Day3Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,

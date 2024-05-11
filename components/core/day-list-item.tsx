@@ -15,7 +15,7 @@ const DayListItem = ({ day }: { day: number }) => {
 export default DayListItem
 const styles = StyleSheet.create({
   box: {
-    flexBasis: "50%",
+    flexBasis: "49%",
     flexShrink: 1,
     aspectRatio: 1,
     backgroundColor: "#F9EDE3",
